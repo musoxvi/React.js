@@ -1,27 +1,33 @@
 import React, { Component, Fragment } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import {indigo400} from 'material-ui/styles/colors';
-import { Card, CardText, CardMedia, CardTitle } from 'material-ui/Card'
-
 import Title from '../components/Title';
+import PlaceCard from '../components/places/PlaceCard';
 import Benefits from '../components/Benefit';
 import data from '../requests/places'
 
 export default class Home extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      places: data.places
+    }
+
+    this.hidePlace = this.hidePlace.bind(this);
+  }
 
   places() {
-    return data.places.map( (place, index) => {
+    return this.state.places.map( (place, index) => {
       return (
-        <div key={ index } className="col-xs-12 col-sm-4">
-          <Card >
-            <CardMedia>
-              <img src={ process.env.PUBLIC_URL + place.imageUrl} alt={place.title}/>
-            </CardMedia>
-            <CardTitle title={place.title}></CardTitle>
-            <CardText>{place.description}</CardText>
-          </Card>
-        </div>
+       <PlaceCard onRemove={ this.hidePlace } place={ place } index={ index } />
       )
+    })
+  }
+
+  hidePlace(place) {
+    this.setState({
+      places: this.state.places.filter( el => el !== place)
     })
   }
 
