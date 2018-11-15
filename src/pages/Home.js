@@ -39,7 +39,7 @@ export default class Home extends Component {
             <div className='header-name'>
               <Title></Title>
               <RaisedButton label='Crear cuenta gratuita' secondary={ true }/>
-              <img className='Header-illustration' src={ process.env.PUBLIC_URL + '/images/topBackground.jpg'} alt='illustration'/>
+              <img className='Header-illustration' src={ process.env.PUBLIC_URL + '/images/topBackground.png'} alt='illustration'/>
             </div>
             <div>
               <Benefits />
