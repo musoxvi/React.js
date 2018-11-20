@@ -5,14 +5,17 @@ import Title from '../components/Title';
 import PlaceCard from '../components/places/PlaceCard';
 import Benefits from '../components/Benefit';
 import data from '../requests/places'
+import TransitionGroup from 'react-transition-group/TransitionGroup';
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      places: data.places
+      places: []
     }
+
+    setTimeout(()=> this.setState({places: data.places}), 3000)
 
     this.hidePlace = this.hidePlace.bind(this);
   }
@@ -49,9 +52,9 @@ export default class Home extends Component {
         </div>
         <div style={{'backgroundColor':indigo400, 'padding':'50px', 'color':'white'}}>
           <h3 style={{'fontSize':'24px'}}>Sitios Populares</h3>
-          <div className="row">
+          <TransitionGroup className="row">
             {this.places()}
-          </div>
+          </TransitionGroup>
         </div>
       </Fragment>
 
