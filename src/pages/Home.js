@@ -6,6 +6,8 @@ import PlaceCard from '../components/places/PlaceCard';
 import Benefits from '../components/Benefit';
 import data from '../requests/places'
 import TransitionGroup from 'react-transition-group/TransitionGroup';
+import Container from '../components/Container';
+
 
 export default class Home extends Component {
   constructor(props) {
@@ -38,17 +40,17 @@ export default class Home extends Component {
     return(
       <Fragment>
         <div className='Header-background'>
-          <div style={{'width':'80%', 'margin':'0 auto'}}>
+          <Container>
             <div className='header-name'>
               <Title></Title>
               <RaisedButton label='Crear cuenta gratuita' secondary={ true }/>
               <img className='Header-illustration' src={ process.env.PUBLIC_URL + '/images/topBackground.png'} alt='illustration'/>
             </div>
             <div>
-              <Benefits />
-              
+              <Benefits /> 
             </div>
-          </div>
+          </Container>
+
         </div>
         <div style={{'backgroundColor':indigo400, 'padding':'50px', 'color':'white'}}>
           <h3 style={{'fontSize':'24px'}}>Sitios Populares</h3>
