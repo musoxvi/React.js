@@ -17,6 +17,7 @@ export default class Router extends React.Component {
         <App>
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
+          <Route path="/signup" component={Login} />
         </App>
       </ReactRouter>
     );
