@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 import Container from '../components/Container'
 import data from '../requests/places'
 import PlaceHorizontal from '../components/places/PlaceHorizontal';
-import { FloatingActionButton } from 'material-ui/FloatingActionButton';
-import { ContentAdd } from 'material-ui/svg-icons/content/add'
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 
 export default class Dashboard extends Component {
 
@@ -30,7 +30,6 @@ export default class Dashboard extends Component {
           <FloatingActionButton secondary={ true }>
             <ContentAdd />
           </FloatingActionButton>
-          
         </Link>
         <Container>
           <div className="row">
@@ -45,6 +44,6 @@ export default class Dashboard extends Component {
           </div>
         </Container>
       </div>
-    ); 
+    );
   }
 }

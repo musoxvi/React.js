@@ -7,7 +7,6 @@ import Dashboard from './pages/Dashboard'
 
 import {
   BrowserRouter as ReactRouter,
-  Link,
   Route
 } from 'react-router-dom';
 
