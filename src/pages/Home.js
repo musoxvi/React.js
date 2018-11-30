@@ -7,6 +7,7 @@ import Benefits from '../components/Benefit';
 import data from '../requests/places'
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 import Container from '../components/Container';
+import { Link } from 'react-router-dom';
 
 
 export default class Home extends Component {
@@ -43,7 +44,9 @@ export default class Home extends Component {
           <Container>
             <div className='header-name'>
               <Title></Title>
-              <RaisedButton label='Crear cuenta gratuita' secondary={ true }/>
+              <Link to="/signup">
+                <RaisedButton label='Crear cuenta gratuita' secondary={ true }/>
+              </Link>
               <img className='Header-illustration' src={ process.env.PUBLIC_URL + '/images/topBackground.png'} alt='illustration'/>
             </div>
             <div>

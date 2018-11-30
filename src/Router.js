@@ -7,10 +7,11 @@ import Dashboard from './pages/Dashboard'
 
 import {
   BrowserRouter as ReactRouter,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom';
 
-const userSignIn = true;
+const userSignIn = false;
 
 export default class Router extends React.Component {
 
@@ -35,10 +36,12 @@ export default class Router extends React.Component {
     return (
       <ReactRouter>
         <App>
-          <Route exact path="/" component={ this.home()} />
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={Login} />
-          {this.signedInRoutes()}
+          <Switch>
+            <Route exact path="/" component={ this.home()} />
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={Login} />
+            {this.signedInRoutes()}
+          </Switch>
         </App>
       </ReactRouter>
     );

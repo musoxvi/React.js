@@ -27,7 +27,10 @@ export default class Dashboard extends Component {
     return(
       <div>
         <Link to='/new'>
-          <FloatingActionButton secondary={ true }>
+          <FloatingActionButton 
+            secondary={ true }
+            className="FAB"
+          >
             <ContentAdd />
           </FloatingActionButton>
         </Link>
